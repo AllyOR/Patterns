@@ -13,6 +13,7 @@ print_K = [ [" " for i in range(6)] for j in range(6) ]
 print_L = [ [" " for i in range(6)] for j in range(6) ]
 print_M = [ [" " for i in range(6)] for j in range(6) ]
 print_N = [ [" " for i in range(6)] for j in range(6) ]
+print_O = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -85,6 +86,11 @@ for raw in range(6):
         if col == 0 or col == 5 or raw == col:
             print_N[raw][col] = "N"
             
+for raw in range(6):
+    for col in range(6):
+        if ( (raw==0 or raw==5) and (col!=0 and col!=5) ) or ( (col==0 or col==5) and (raw!=0 and raw!=5) ):
+            print_O[raw][col] = "0"
+            
 
 # Printing the patterns
 for i in range(6):
@@ -143,5 +149,9 @@ for i in range(6):
     
     for j in range(6):
         print(print_N[i] [j], end = "")
+    print(end="  ")
+    
+    for j in range(6):
+        print(print_O[i] [j], end = "")
         
     print()

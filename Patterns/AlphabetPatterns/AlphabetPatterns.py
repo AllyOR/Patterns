@@ -11,6 +11,7 @@ print_I = [ [" " for i in range(6)] for j in range(6) ]
 print_J = [ [" " for i in range(6)] for j in range(6) ]
 print_K = [ [" " for i in range(6)] for j in range(6) ]
 print_L = [ [" " for i in range(6)] for j in range(6) ]
+print_M = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -73,6 +74,11 @@ for raw in range(6):
         if raw==5 or (col==0 and raw!=5):
             print_L[raw][col] = "L"
             
+for raw in range(6):
+    for col in range(6):
+        if (col==0 or col==5) or (raw==3 and (col==2 or col==3)) or (raw==2 and (col==1 or col==4)):
+            print_M[raw][col] = "M"
+            
 
 # Printing the patterns
 for i in range(6):
@@ -123,5 +129,9 @@ for i in range(6):
     
     for j in range(6):
         print(print_L[i] [j], end = "")
+    print(end="  ")
+    
+    for j in range(6):
+        print(print_M[i] [j], end = "")
         
     print()

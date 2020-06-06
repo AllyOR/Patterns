@@ -14,8 +14,9 @@ print_L = [ [" " for i in range(6)] for j in range(6) ]
 print_M = [ [" " for i in range(6)] for j in range(6) ]
 print_N = [ [" " for i in range(6)] for j in range(6) ]
 print_O = [ [" " for i in range(6)] for j in range(6) ]
-print_Q = [ [" " for i in range(6)] for j in range(6) ]
 print_P = [ [" " for i in range(6)] for j in range(6) ]
+print_Q = [ [" " for i in range(6)] for j in range(6) ]
+print_R = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -102,6 +103,11 @@ for raw in range(6):
     for col in range(6):
         if (raw==0 and (col!=0 and col!=5)) or (raw==5 and (col>0 and col<4)) or (col==0 and (raw!=0 and raw!=5)) or (col==5 and raw!=0) or (col==3 and raw==3) or (col==4 and raw==4):
             print_Q[raw][col] = "Q"
+
+for raw in range(6):
+    for col in range(6):
+        if col==0 or (raw==3 and col<4) or (col==4 and (raw==2 or raw==4)) or (col==5 and (raw==1 or raw==5)) or (raw==0 and col!=5):
+            print_R[raw][col] = "R"
             
 
 # Printing the patterns
@@ -173,5 +179,15 @@ for i in range(6):
     
     for j in range(6):
         print(print_Q[i] [j], end = "")
+        
+    print()
+print("\n")
+for i in range(6):
+    
+    for j in range(6):
+        print(print_R[i] [j], end = "")
+    print(end="  ")
+
+    
         
     print()

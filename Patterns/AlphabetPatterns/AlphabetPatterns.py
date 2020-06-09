@@ -17,6 +17,7 @@ print_O = [ [" " for i in range(6)] for j in range(6) ]
 print_P = [ [" " for i in range(6)] for j in range(6) ]
 print_Q = [ [" " for i in range(6)] for j in range(6) ]
 print_R = [ [" " for i in range(6)] for j in range(6) ]
+print_S = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -108,6 +109,11 @@ for raw in range(6):
     for col in range(6):
         if col==0 or (raw==3 and col<4) or (col==4 and (raw==2 or raw==4)) or (col==5 and (raw==1 or raw==5)) or (raw==0 and col!=5):
             print_R[raw][col] = "R"
+
+for raw in range(6):
+    for col in range(6):
+        if ((raw==1 or raw ==2) and col==0) or ((raw==4) and col==5) or (raw==0  and col!=0) or (raw==3 and (col!=0 and col!=5)) or (raw==5 and col!=5):
+            print_S[raw][col] = "S"
             
 
 # Printing the patterns
@@ -188,6 +194,7 @@ for i in range(6):
         print(print_R[i] [j], end = "")
     print(end="  ")
 
-    
+    for j in range(6):
+        print(print_S[i] [j], end = "")
         
     print()

@@ -19,6 +19,7 @@ print_Q = [ [" " for i in range(6)] for j in range(6) ]
 print_R = [ [" " for i in range(6)] for j in range(6) ]
 print_S = [ [" " for i in range(6)] for j in range(6) ]
 print_T = [ [" " for i in range(6)] for j in range(6) ]
+print_U = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -120,6 +121,11 @@ for raw in range(6):
     for col in range(6):
         if col == 3 or (raw==0 and col!=0):
             print_T[raw][col] = "T"
+
+for raw in range(6):
+    for col in range(6):
+        if ( (raw==5) and (col!=0 and col!=5) ) or ( (col==0 or col==5) and (raw!=5) ):
+            print_U[raw][col] = "U"
             
 
 # Printing the patterns
@@ -206,5 +212,9 @@ for i in range(6):
 
     for j in range(6):
         print(print_T[i] [j], end = "")
+    print(end="  ")
+
+    for j in range(6):
+        print(print_U[i] [j], end = "")
         
     print()

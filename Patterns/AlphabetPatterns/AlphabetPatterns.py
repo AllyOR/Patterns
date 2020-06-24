@@ -22,6 +22,7 @@ print_T = [ [" " for i in range(6)] for j in range(6) ]
 print_U = [ [" " for i in range(6)] for j in range(6) ]
 print_V = [ [" " for i in range(6)] for j in range(6) ]
 print_W = [ [" " for i in range(6)] for j in range(6) ]
+print_X = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -138,6 +139,11 @@ for raw in range(6):
     for col in range(6):
         if (col==0 or col==5) or (raw==3 and (col==2 or col==3)) or (raw==4 and (col==1 or col==4)):
             print_W[raw][col] = "W"
+
+for raw in range(6):
+    for col in range(6):
+        if (col==0 and raw==5) or (col==raw) or (col==5 and raw==0) or (col==1 and raw==4) or (col==4 and raw==1) or (col==2 and raw==3) or (col==3 and raw==2):
+            print_X[raw][col] = "X"
             
 
 # Printing the patterns
@@ -236,5 +242,9 @@ for i in range(6):
 
     for j in range(6):
         print(print_W[i] [j], end = "")
+    print(end="  ")
+
+    for j in range(6):
+        print(print_X[i] [j], end = "")
         
     print()

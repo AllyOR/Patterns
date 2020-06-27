@@ -24,6 +24,7 @@ print_V = [ [" " for i in range(6)] for j in range(6) ]
 print_W = [ [" " for i in range(6)] for j in range(6) ]
 print_X = [ [" " for i in range(6)] for j in range(6) ]
 print_Y = [ [" " for i in range(6)] for j in range(6) ]
+print_Z = [ [" " for i in range(6)] for j in range(6) ]
 
 # Defining the patterns for the letters
 for raw in range(6):
@@ -150,6 +151,11 @@ for raw in range(6):
     for col in range(6):
         if ((raw < 2 and col ==0) or (raw!=5 and col == 5)) or (raw==5 and (col!=0 and col!=5)) or (raw==2 and (col!=0 and col!=5)):
             print_Y[raw][col] = "Y"
+
+for raw in range(6):
+    for col in range(6):
+        if (raw==0 or raw==5) or (col==1 and raw==4) or (col==4 and raw==1) or (col==2 and raw==3) or (col==3 and raw==2):
+            print_Z[raw][col] = "Z"
             
 
 # Printing the patterns
@@ -256,5 +262,9 @@ for i in range(6):
 
     for j in range(6):
         print(print_Y[i] [j], end = "")
+    print(end="  ")
+
+    for j in range(6):
+        print(print_Z[i] [j], end = "")
         
     print()

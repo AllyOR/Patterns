@@ -10,7 +10,7 @@ for raw in range(6):
 
 for raw in range(6):
     for col in range(6):
-        if col == 3:
+        if col == 3 or (raw==5 and (col!=0 and col!=5)) or (raw==2 and col==0) or (raw==1 and col==1) or (raw==0 and col==2):
             print_1[raw][col] = "1"
 
 

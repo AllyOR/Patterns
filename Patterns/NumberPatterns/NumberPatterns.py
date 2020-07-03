@@ -6,3 +6,7 @@ for raw in range(6):
             print_0[raw][col] = "0"
 
 
+for i in range(6):
+    for j in range(6):
+        print(print_0[i] [j], end="")
+    print()

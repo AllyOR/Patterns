@@ -1,6 +1,7 @@
 # Patterns of numbers
 
 print_0 = [ [" " for i in range(6)] for j in range(6) ]
+print_1 = [ [" " for i in range(6)] for j in range(6) ]
 
 for raw in range(6):
     for col in range(6):

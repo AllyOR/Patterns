@@ -9,6 +9,7 @@ print_5 = [ [" " for i in range(6)] for j in range(6) ]
 print_6 = [ [" " for i in range(6)] for j in range(6) ]
 print_7 = [ [" " for i in range(6)] for j in range(6) ]
 print_8 = [ [" " for i in range(6)] for j in range(6) ]
+print_9 = [ [" " for i in range(6)] for j in range(6) ]
 
 for raw in range(6):
     for col in range(6):
@@ -55,6 +56,11 @@ for raw in range(6):
         if (col==0 and (raw==1 or raw==3 or raw==4)) or ((raw==0 or raw==5)and (col!=0 and col!=5)) or (raw==2 and (col!=0 and col!=5)) or (col==5 and (raw==1 or raw==3 or raw==4)):
             print_8[raw][col] = "8"
 
+for raw in range(6):
+    for col in range(6):
+        if (raw==1 and col==0) or ((raw!=0 and raw!=5) and col==5) or (raw==5 and (col!=0 and col!=5)) or (raw==2 and (col!=0 and col!=5)) or (raw==0 and (col!=0 and col!=5)):
+            print_9[raw][col] = "9"
+
 
 for i in range(6):
 
@@ -89,7 +95,11 @@ for i in range(6):
     for j in range(6):
         print(print_7[i] [j], end = "")
     print(end="  ")
+
+    for j in range(6):
+        print(print_8[i] [j], end = "")
+    print(end="  ")
     
     for j in range(6):
-        print(print_8[i] [j], end="")
+        print(print_9[i] [j], end="")
     print()

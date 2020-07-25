@@ -33,7 +33,7 @@ for raw in range(6):
 
 for raw in range(6):
     for col in range(6):
-        if col == 4 or (raw==2 and (col!=0 and col!=5)) or (col==0 and raw<3):
+        if col == 5 or (raw==2 and (col!=0 and col!=5)) or (col==0 and raw<3):
             print_4[raw][col] = "4"
 
 for raw in range(6):

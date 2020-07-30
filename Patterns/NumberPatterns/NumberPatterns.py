@@ -1,4 +1,4 @@
-# Patterns of numbers
+# Patterns of numbers from 0 to 9
 
 print_0 = [ [" " for i in range(6)] for j in range(6) ]
 print_1 = [ [" " for i in range(6)] for j in range(6) ]
